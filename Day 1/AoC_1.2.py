@@ -1,22 +1,7 @@
 # Template Codeforces
 import sys
 import re
-input = sys.stdin.readline
-     
-    ############ ---- Input Functions ---- ############
-def inp(): #integer
-    return(int(input()))
-def inlt(): # list
-    return(list(map(int,input().split())))
-def insr(): # string
-    s = input()
-    return(list(s[:len(s) - 1]))
-def invr(): # separated int
-    return(map(int,input().split()))
-     
-    # sys.stdout.write(str('yes') + "\n")
-     
-############ ---- Problem Solution ---- ############
+
 def main():
     sum=0
     with open('AoC1.txt', 'r') as f:
@@ -26,7 +11,7 @@ def main():
             if len(input): 
                 print(input)
 
-                nums_appear = {num:[i.start() for i in re.finditer(num, input)] for (key, num) in nums.items()}    
+                nums_appear = {num: [i.start() for i in re.finditer(num, input)] for (key, num) in nums.items()}    
                 nums_str = {key:[i.start() for i in re.finditer(key, input)] for key in nums}
                 final_dic = nums_appear | nums_str
 
